@@ -1,0 +1,3 @@
+- Form validation using reg exp, not html 5 validation
+- Validation on mouse out, not Submit
+- BS 5
