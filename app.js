@@ -23,6 +23,8 @@ function validateName() {
   } else {
     name.classList.remove('is-invalid')
   }
+
+  console.log('Reg ex used for "name":', re.source)
 }
 
 //-----------------------------------
@@ -37,6 +39,8 @@ function validateZip() {
   } else {
     zip.classList.remove('is-invalid')
   }
+
+  console.log('Reg ex used for "zip":', re.source)
 }
 //-----------------------------------
 function validateEmail() {
@@ -49,10 +53,26 @@ function validateEmail() {
   } else {
     email.classList.remove('is-invalid')
   }
+
+  console.log('Reg ex used for "email":', re.source)
 }
 
 //-----------------------------------
-function validatePhone() {}
+function validatePhone() {
+  const phone = document.getElementById('phone')
+  // Allow different formats for locally Sweden, mob and 
+
+  const re = /^\(?\d{2,4}\)?[-. ]?\d{3}[-. ]?\d{4}$/ ;
+
+  if (!re.test(phone.value)) {
+    phone.classList.add('is-invalid')
+  } else {
+    phone.classList.remove('is-invalid')
+  }
+
+  console.log('Reg ex used for "phone":', re.source)
+
+}
 
 // + Check all fields before submit
 
