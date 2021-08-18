@@ -9,6 +9,8 @@ document.getElementById('zip').addEventListener('blur', validateZip)
 document.getElementById('email').addEventListener('blur', validateEmail)
 document.getElementById('phone').addEventListener('blur', validatePhone)
 
+document.getElementById('submit-btn').addEventListener('click', validateFields)
+
 //-----------------------------------
 // Validate Letters a-z or A-Z, x num of characters
 function validateName() {
@@ -75,6 +77,23 @@ function validatePhone() {
 }
 
 // + Check all fields before submit
+function validateFields(e) {
+  console.log('clicked')
+
+  const name = document.getElementById('name')
+  console.log(name)
+  const zip = document.getElementById('zip')
+  const email = document.getElementById('email')
+  const phone = document.getElementById('phone')
+
+  if(name.value.length == 0 || zip.value.length == 0 || email.value.length == 0 || phone.value.length == 0) {
+    alert('Some fields are empty, please try again!')
+
+  }
+  e.preventDefault()
+}
+
+
 
 /* 
 ^               // start of line
