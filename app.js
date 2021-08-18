@@ -1,5 +1,6 @@
 // console.log('here')
 
+// Go ES6 arrow functions
 // const validateName = () => {
 // }
 
@@ -9,6 +10,7 @@ document.getElementById('zip').addEventListener('blur', validateZip)
 document.getElementById('email').addEventListener('blur', validateEmail)
 document.getElementById('phone').addEventListener('blur', validatePhone)
 
+// Listen to submit:
 document.getElementById('submit-btn').addEventListener('click', validateFields)
 
 //-----------------------------------
@@ -94,7 +96,9 @@ function validateFields(e) {
     alert('Some fields are empty, please try again!')
     e.preventDefault() // stop refresh window
   } else {
-    alert('Input validated ok - Data sent ok!')
+    alert('All input fields validated ok - sending form data!')
+    // document.getElementById('form-sent').innerHTML = 'Input validated ok - Data sent ok!'
+    // Get message in dom and timeout window refresh
   }
 }
 
