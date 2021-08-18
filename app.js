@@ -48,7 +48,7 @@ function validateZip() {
 function validateEmail() {
   const email = document.getElementById('email')
   // Will search for TLDs within range 2-5:
-  const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/ 
+  const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
 
   if (!re.test(email.value)) {
     email.classList.add('is-invalid')
@@ -62,9 +62,9 @@ function validateEmail() {
 //-----------------------------------
 function validatePhone() {
   const phone = document.getElementById('phone')
-  // Allow different formats for locally Sweden, mob and 
+  // Allow different formats for locally Sweden, mob and
 
-  const re = /^\(?\d{2,4}\)?[-. ]?\d{3}[-. ]?\d{4}$/ ;
+  const re = /^\(?\d{2,4}\)?[-. ]?\d{3}[-. ]?\d{4}$/
 
   if (!re.test(phone.value)) {
     phone.classList.add('is-invalid')
@@ -73,27 +73,30 @@ function validatePhone() {
   }
 
   console.log('Reg ex used for "phone":', re.source)
-
 }
 
+//-----------------------------------
 // + Check all fields before submit
 function validateFields(e) {
-  console.log('clicked')
+  console.log('Submit btn clicked')
 
   const name = document.getElementById('name')
-  console.log(name)
   const zip = document.getElementById('zip')
   const email = document.getElementById('email')
   const phone = document.getElementById('phone')
 
-  if(name.value.length == 0 || zip.value.length == 0 || email.value.length == 0 || phone.value.length == 0) {
+  if (
+    name.value.length == 0 ||
+    zip.value.length == 0 ||
+    email.value.length == 0 ||
+    phone.value.length == 0
+  ) {
     alert('Some fields are empty, please try again!')
-
+    e.preventDefault() // stop refresh window
+  } else {
+    alert('Input validated ok - Data sent ok!')
   }
-  e.preventDefault()
 }
-
-
 
 /* 
 ^               // start of line
